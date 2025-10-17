@@ -10,8 +10,6 @@ services:
                 TIMEZONE: ${TIMEZONE}
         volumes:
             - ./symfony/:/var/www/symfony/
-        networks:
-            - tripncity
     nginxtripncity:
         restart: unless-stopped
         build:
@@ -21,8 +19,6 @@ services:
             - ./symfony/:/var/www/symfony/
         ports:
             - 8180:80
-        networks:
-            - tripncity
     dbserver:
         image: mariadb
         # command: --default-authentication-plugin=mysql_native_password 
@@ -36,15 +32,12 @@ services:
             MARIADB_PASSWORD: ${MYSQL_PASSWORD}
         ports:
             - 3306:3306
-        networks:
-            - tripncity
     phpmyadmin:
         image: phpmyadmin
         ports:
         - 8181:80
         environment:
             - PMA_HOST=dbserver
-        networks:
-            - tripncity
-networks:
-    tripncity:
+
+# networks:
+#     tripncity:
