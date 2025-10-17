@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-    phptripncity:
+    php:
         restart: unless-stopped
         build:
             context: .
@@ -10,7 +10,7 @@ services:
                 TIMEZONE: ${TIMEZONE}
         volumes:
             - ./symfony/:/var/www/symfony/
-    nginxtripncity:
+    nginx:
         restart: unless-stopped
         build:
             context: .
