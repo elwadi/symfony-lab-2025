@@ -38,13 +38,20 @@ services:
         - 8181:80
         environment:
             - PMA_HOST=dbserver
-    rabbitmq:
-        image: rabbitmq:management
+    # rabbitmq:
+    #     image: rabbitmq:management
+    #     ports:
+    #       - 8182:15672
+    #       - 5672:5672
+    #     environment:
+    #         RABBITMQ_DEFAULT_USER: user
+    #         RABBITMQ_DEFAULT_PASS: password
+            
+            
+    lavinmq:
+        image: cloudamqp/lavinmq:pr-1392
         ports:
-          - 8182:15672
+          - 8183:15672
           - 5672:5672
-        environment:
-            RABBITMQ_DEFAULT_USER: user
-            RABBITMQ_DEFAULT_PASS: password
 # networks:
 #     tripncity:
