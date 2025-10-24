@@ -10,7 +10,7 @@ final class SendEmailHandler
 {
     public function __invoke(SendEmail $message): void
     {
-        //sleep(5);
+        sleep(1);
         echo $message->getContent();
     }
 }
