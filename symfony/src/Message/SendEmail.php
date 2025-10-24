@@ -9,13 +9,13 @@ final class SendEmail
 {
 
     public function __construct(
-         private string $content
+         private string $idEmail
     ) {
 
     }
 
-     public function getContent(): string
+     public function getIdEmail(): string
     {
-        return $this->content;
+        return $this->idEmail;
     }
 }
