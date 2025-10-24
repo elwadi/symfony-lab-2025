@@ -24,6 +24,9 @@ RUN apt-get update && apt-get install -y \
     librabbitmq4 \
     libpq-dev \
     acl 
+    
+RUN pecl install amqp
+RUN docker-php-ext-enable amqp  
 
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash
 #install yarn
@@ -37,7 +40,7 @@ RUN curl -sL https://get.symfony.com/cli/installer | bash
 RUN docker-php-ext-configure gd --with-jpeg --with-freetype 
 
 RUN docker-php-ext-install \
-    pdo pdo_mysql pdo_pgsql zip xsl gd intl opcache exif mbstring  bcmath
+    pdo pdo_mysql pdo_pgsql zip xsl gd intl opcache exif mbstring  bcmath 
     
 # Extract PHP source
 RUN docker-php-source extract
