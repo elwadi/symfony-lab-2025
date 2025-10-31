@@ -20,8 +20,8 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxslt1-dev \
     amqp-tools \
-    librabbitmq-dev \
     librabbitmq4 \
+    librabbitmq-dev \
     libpq-dev \
     acl 
     
