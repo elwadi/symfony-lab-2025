@@ -12,15 +12,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
 
-#[ApiResource(
-    normalizationContext: ['groups' => ['category:read']],
-    denormalizationContext: ['groups' => ['category:write']],
-    operations: [
-        new GetCollection(
-            normalizationContext: ['groups' => ['category:read']],
-        ),
-    ]
-)]
+#[ApiResource()]
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 class Category
 {
